@@ -15,7 +15,7 @@ namespace utils{
             int status;
             const char* nombre = typeid(valor).name();
             char* demangled = abi::__cxa_demangle(nombre, nullptr, nullptr, &status);
-            std::cout <<"   Tipo: "<< (status == 0 ? demangled : nombre) << "\n";
+            std::cout <<"   Tipo: ("<< (status == 0 ? demangled : nombre) << ")\n";
             free(demangled); // Liberar memoria del nombre demangleado
         }
     }
@@ -24,7 +24,7 @@ namespace utils{
     typename std::enable_if<std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T& valor){
         std::cout << "------------------- Print Memory --------------------\n";
-        std::cout << "Input(#): \"" << name << "\"\n";
+        std::cout << "Target(#): \"" << name << "\"\n";
         std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: Objeto\n";
@@ -51,7 +51,7 @@ namespace utils{
     typename std::enable_if<!std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T& valor){
         std::cout << "------------------- Print Memory --------------------\n";
-        std::cout << "Input(#): \"" << name << "\"\n";
+        std::cout << "Target(#): \"" << name << "\"\n";
         std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: ";
@@ -88,7 +88,7 @@ namespace utils{
     typename std::enable_if<std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T&& valor){
         std::cout << "------------------- Print Memory --------------------\n";
-        std::cout << "Input(#): \"" << name << "\"\n";
+        std::cout << "Target(#): \"" << name << "\"\n";
         std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: Objeto\n";
@@ -108,7 +108,7 @@ namespace utils{
     typename std::enable_if<!std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T&& valor){
         std::cout << "------------------- Print Memory --------------------\n";
-        std::cout << "Input(#): \"" << name << "\"\n";
+        std::cout << "Target(#): \"" << name << "\"\n";
         std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: ";
