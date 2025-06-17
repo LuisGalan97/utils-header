@@ -23,8 +23,8 @@ namespace utils{
     template<typename T>
     typename std::enable_if<std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T& valor){
-        std::cout << "-----------------------------------------------------\n";
-        std::cout << "Nombre: " << name << "\n";
+        std::cout << "------------------- Print Memory --------------------\n";
+        std::cout << "Input: " << name << "\n";
         std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: objeto\n";
@@ -50,8 +50,8 @@ namespace utils{
     template<typename T>
     typename std::enable_if<!std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T& valor){
-        std::cout << "-----------------------------------------------------\n";
-        std::cout << "Nombre: " << name << "\n";
+        std::cout << "------------------- Print Memory --------------------\n";
+        std::cout << "Input: " << name << "\n";
         std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: ";
@@ -87,8 +87,8 @@ namespace utils{
     template<typename T>
     typename std::enable_if<std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T&& valor){
-        std::cout << "-----------------------------------------------------\n";
-        std::cout << "Nombre: " << name << "\n";
+        std::cout << "------------------- Print Memory --------------------\n";
+        std::cout << "Input: " << name << "\n";
         std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: objeto\n";
@@ -107,8 +107,8 @@ namespace utils{
     template<typename T>
     typename std::enable_if<!std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T&& valor){
-        std::cout << "-----------------------------------------------------\n";
-        std::cout << "Nombre: " << name << "\n";
+        std::cout << "------------------- Print Memory --------------------\n";
+        std::cout << "Input: " << name << "\n";
         std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: ";
