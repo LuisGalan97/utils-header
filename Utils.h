@@ -27,7 +27,7 @@ namespace utils{
         std::cout << "Input: " << name << "\n";
         std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
-        std::cout << "   Valor: objeto\n";
+        std::cout << "   Valor: Objeto\n";
         std::cout << "  |------------|\n";
         for (int i = sizeof(valor)-1; i >= 0; i--){
             void* address = (void*)(((char*) &valor) + i);
@@ -41,7 +41,7 @@ namespace utils{
             }
         }
         std::cout << "  |------------|\n";
-        std::cout << "   Valor: objeto\n";
+        std::cout << "   Valor: Objeto\n";
         showType(valor);
         std::cout<<"\n";
         std::cout << "-----------------------------------------------------\n";
@@ -56,7 +56,7 @@ namespace utils{
         showType(valor);
         std::cout << "   Valor: ";
         if (std::is_array<T>::value){
-            std::cout << "array\n";
+            std::cout << "Array\n";
         } else {
             std::cout << valor << "\n";
         }
@@ -75,7 +75,7 @@ namespace utils{
         std::cout << "  |------------|\n";
         std::cout << "   Valor: ";
         if (std::is_array<T>::value){
-            std::cout << "array\n";
+            std::cout << "Array\n";
         } else {
             std::cout << valor << "\n";
         }
@@ -91,14 +91,14 @@ namespace utils{
         std::cout << "Input: " << name << "\n";
         std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
-        std::cout << "   Valor: objeto\n";
+        std::cout << "   Valor: Objeto\n";
         std::cout << "  |------------|\n";
         for (int i = sizeof(valor)-1; i >= 0; i--){
             int byte = (int) *(((unsigned char*) &valor) + i);
             std::cout << "  | ["<< std::bitset<8>(byte) << "] |\n";
         }
         std::cout << "  |------------|\n";
-        std::cout << "   Valor: objeto\n";
+        std::cout << "   Valor: Objeto\n";
         showType(valor);
         std::cout<<"\n";
         std::cout << "-----------------------------------------------------\n";
@@ -113,7 +113,7 @@ namespace utils{
         showType(valor);
         std::cout << "   Valor: ";
         if (std::is_array<T>::value){
-            std::cout << "array\n";
+            std::cout << "Array\n";
         } else {
             std::cout << valor << "\n";
         }
@@ -125,7 +125,7 @@ namespace utils{
         std::cout << "  |------------|\n";
         std::cout << "   Valor: ";
         if (std::is_array<T>::value){
-            std::cout << "array\n";
+            std::cout << "Array\n";
         } else {
             std::cout << valor << "\n";
         }
