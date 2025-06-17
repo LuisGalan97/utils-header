@@ -24,7 +24,7 @@ namespace utils{
     printMemoryImp(const char* name, T& valor){
         std::cout << "-----------------------------------------------------\n";
         std::cout << "Nombre: " << name << "\n";
-        std::cout << "[lvalue - Variable/Referencia]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << " Valor: objeto\n";
         std::cout << "|------------|\n";
@@ -51,7 +51,7 @@ namespace utils{
     printMemoryImp(const char* name, T& valor){
         std::cout << "-----------------------------------------------------\n";
         std::cout << "Nombre: " << name << "\n";
-        std::cout << "[lvalue - Variable/Referencia]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << " Valor: ";
         if (std::is_array<T>::value){
