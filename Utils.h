@@ -2,7 +2,6 @@
 #define UTILS_H
 
 #define printMemory(var) printMemoryImp(#var, var)
-
 #include <iostream>
 #include <bitset>
 #include <typeinfo>
@@ -15,7 +14,7 @@ namespace utils{
             int status;
             const char* nombre = typeid(valor).name();
             char* demangled = abi::__cxa_demangle(nombre, nullptr, nullptr, &status);
-            std::cout <<" Tipo: ("<< (status == 0 ? demangled : nombre) << ")\n";
+            std::cout <<"(Tipo: "<< (status == 0 ? demangled : nombre) << ")\n";
             free(demangled); // Liberar memoria del nombre demangleado
         }
     }
@@ -23,9 +22,10 @@ namespace utils{
     template<typename T>
     typename std::enable_if<std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T& valor){
-        std::cout << "\n[lvalue - Variable/Referencia]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "-----------------------------------------------------\n";
+        std::cout << "Nombre: " << name << "\n";
+        std::cout << "[lvalue - Variable/Referencia]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
-        std::cout << " Nombre: " << name << "\n";
         std::cout << " Valor: objeto\n";
         std::cout << "|------------|\n";
         for (int i = sizeof(valor)-1; i >= 0; i--){
@@ -41,17 +41,17 @@ namespace utils{
         }
         std::cout << "|------------|\n";
         std::cout << " Valor: objeto\n";
-        std::cout << " Nombre: " << name << "\n";
         showType(valor);
-        std::cout << "\n";
+        std::cout << "-----------------------------------------------------\n";
     }
 
     template<typename T>
     typename std::enable_if<!std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T& valor){
-        std::cout << "\n[lvalue - Variable/Referencia]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "-----------------------------------------------------\n";
+        std::cout << "Nombre: " << name << "\n";
+        std::cout << "[lvalue - Variable/Referencia]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
-        std::cout << " Nombre: " << name << "\n";
         std::cout << " Valor: ";
         if (std::is_array<T>::value){
             std::cout << "array\n";
@@ -77,17 +77,17 @@ namespace utils{
         } else {
             std::cout << valor << "\n";
         }
-        std::cout << " Nombre: " << name << "\n";
         showType(valor);
-        std::cout << "\n";
+        std::cout << "-----------------------------------------------------\n";
     }
 
     template<typename T>
     typename std::enable_if<std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T&& valor){
-        std::cout << "\n[rvalue - Valor]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "-----------------------------------------------------\n";
+        std::cout << "Nombre: " << name << "\n";
+        std::cout << "[rvalue - Valor]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
-        std::cout << " Nombre: " << name << "\n";
         std::cout << " Valor: objeto\n";
         std::cout << "|------------|\n";
         for (int i = sizeof(valor)-1; i >= 0; i--){
@@ -96,17 +96,17 @@ namespace utils{
         }
         std::cout << "|------------|\n";
         std::cout << " Valor: objeto\n";
-        std::cout << " Nombre: " << name << "\n";
         showType(valor);
-        std::cout << "\n";
+        std::cout << "-----------------------------------------------------\n";
     }
 
     template<typename T>
     typename std::enable_if<!std::is_class<T>::value, void>::type
     printMemoryImp(const char* name, T&& valor){
-        std::cout << "\n[rvalue - Valor]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "-----------------------------------------------------\n";
+        std::cout << "Nombre: " << name << "\n";
+        std::cout << "[rvalue - Valor]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
-        std::cout << " Nombre: " << name << "\n";
         std::cout << " Valor: ";
         if (std::is_array<T>::value){
             std::cout << "array\n";
@@ -125,9 +125,8 @@ namespace utils{
         } else {
             std::cout << valor << "\n";
         }
-        std::cout << " Nombre: " << name << "\n";
         showType(valor);
-        std::cout << "\n";
+        std::cout << "-----------------------------------------------------\n";
     }
 }
 
