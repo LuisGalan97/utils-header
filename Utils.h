@@ -1,7 +1,6 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#define imprimirNombre(var) imprimirNombreImpl(#var, var)
 #define printMemory(var) printMemoryImp(#var, var)
 
 #include <iostream>
