@@ -8,14 +8,14 @@
 
 namespace utils{
     #define printMemory(var) printMemoryImp(#var, var)
-    
+
     namespace {
         template<typename T>
         void showType(T& valor){
             int status;
             const char* nombre = typeid(valor).name();
             char* demangled = abi::__cxa_demangle(nombre, nullptr, nullptr, &status);
-            std::cout <<"(Tipo: "<< (status == 0 ? demangled : nombre) << ")\n";
+            std::cout <<" Tipo: "<< (status == 0 ? demangled : nombre) << "\n";
             free(demangled); // Liberar memoria del nombre demangleado
         }
     }
