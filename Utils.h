@@ -1,13 +1,14 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#define printMemory(var) printMemoryImp(#var, var)
 #include <iostream>
 #include <bitset>
 #include <typeinfo>
 #include <cxxabi.h>
 
 namespace utils{
+    #define printMemory(var) printMemoryImp(#var, var)
+    
     namespace {
         template<typename T>
         void showType(T& valor){
