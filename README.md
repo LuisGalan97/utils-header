@@ -1,0 +1,3 @@
+Cabecera de utilidades de C++ que dispone del metodo "utils::printMemory()" el cual recibe de parametro y permite graficar en consola el conjunto de celdas de memoria a los que tipicamente se vincula una variable o una referencia, haciendo distincion de objetos, arrays o valores primitivos, a su vez como de los lvalues y rvalues. 
+
+Puede incluirlo en su archivo cpp principal con #include "Utils.h".
