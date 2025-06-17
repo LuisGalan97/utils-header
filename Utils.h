@@ -25,7 +25,7 @@ namespace utils{
     printMemoryImp(const char* name, T& valor){
         std::cout << "------------------- Print Memory --------------------\n";
         std::cout << "Target(#): \"" << name << "\"\n";
-        std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[lvalue - Variable/Referencia/Instrucción]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: Objeto\n";
         std::cout << "  |------------|\n";
@@ -52,7 +52,7 @@ namespace utils{
     printMemoryImp(const char* name, T& valor){
         std::cout << "------------------- Print Memory --------------------\n";
         std::cout << "Target(#): \"" << name << "\"\n";
-        std::cout << "[lvalue - Variable/Referencia/Instruccion]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[lvalue - Variable/Referencia/Instrucción]\nReserva " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: ";
         if (std::is_array<T>::value){
@@ -89,7 +89,7 @@ namespace utils{
     printMemoryImp(const char* name, T&& valor){
         std::cout << "------------------- Print Memory --------------------\n";
         std::cout << "Target(#): \"" << name << "\"\n";
-        std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[rvalue - Valor/Instrucción]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: Objeto\n";
         std::cout << "  |------------|\n";
@@ -109,7 +109,7 @@ namespace utils{
     printMemoryImp(const char* name, T&& valor){
         std::cout << "------------------- Print Memory --------------------\n";
         std::cout << "Target(#): \"" << name << "\"\n";
-        std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[rvalue - Valor/Instrucción]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << "   Valor: ";
         if (std::is_array<T>::value){
