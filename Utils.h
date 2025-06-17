@@ -42,6 +42,7 @@ namespace utils{
         std::cout << "|------------|\n";
         std::cout << " Valor: objeto\n";
         showType(valor);
+        std::cout<<"\n";
         std::cout << "-----------------------------------------------------\n";
     }
 
@@ -78,6 +79,7 @@ namespace utils{
             std::cout << valor << "\n";
         }
         showType(valor);
+        std::cout<<"\n";
         std::cout << "-----------------------------------------------------\n";
     }
 
@@ -86,7 +88,7 @@ namespace utils{
     printMemoryImp(const char* name, T&& valor){
         std::cout << "-----------------------------------------------------\n";
         std::cout << "Nombre: " << name << "\n";
-        std::cout << "[rvalue - Valor]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << " Valor: objeto\n";
         std::cout << "|------------|\n";
@@ -97,6 +99,7 @@ namespace utils{
         std::cout << "|------------|\n";
         std::cout << " Valor: objeto\n";
         showType(valor);
+        std::cout<<"\n";
         std::cout << "-----------------------------------------------------\n";
     }
 
@@ -105,7 +108,7 @@ namespace utils{
     printMemoryImp(const char* name, T&& valor){
         std::cout << "-----------------------------------------------------\n";
         std::cout << "Nombre: " << name << "\n";
-        std::cout << "[rvalue - Valor]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
+        std::cout << "[rvalue - Valor/Instruccion]\nNecesita de " << sizeof(valor) << " bytes de memoria\n\n";
         showType(valor);
         std::cout << " Valor: ";
         if (std::is_array<T>::value){
@@ -126,6 +129,7 @@ namespace utils{
             std::cout << valor << "\n";
         }
         showType(valor);
+        std::cout<<"\n";
         std::cout << "-----------------------------------------------------\n";
     }
 }
